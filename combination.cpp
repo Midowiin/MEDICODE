@@ -6,18 +6,22 @@
 #include "patientconsent.h"
 #include "patientpersonalinfo.h"
 #include "generalquestions.h"
+#include <windows.h> 
 
 using namespace std;
 
 int main()
 {
-    medicodebanner();
 
-    mainmenu();
+    SetConsoleOutputCP(CP_UTF8);    
+
+    medicodebanner();
 
     patientconsent();
 
     patientpersonalinfo();
+
+    mainmenu();
 
     generalquestions();
 

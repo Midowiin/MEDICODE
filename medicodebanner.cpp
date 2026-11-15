@@ -1,8 +1,10 @@
 #include <iostream>
 #include "medicodebanner.h"
 #include <string>
+#include <windows.h>
 
 using namespace std;
+
 
 void medicodebanner()
 {
@@ -17,14 +19,17 @@ void medicodebanner()
     if (code == "*206#")
     {
         
-        cout << "\033[1;38;5;88m"; 
-        cout << "" << endl;
-    cout << R"(                                                                                     
-██▄  ▄██ ██████ ████▄  ██ ▄█████ ▄████▄ ████▄  ██████ 
-██ ▀▀ ██ ██▄▄   ██  ██ ██ ██     ██  ██ ██  ██ ██▄▄   
-██    ██ ██▄▄▄▄ ████▀  ██ ▀█████ ▀████▀ ████▀  ██▄▄▄▄ 
+        cout << "\033[1;38;5;88m";
+
+cout << R"(
+███    ███ ███████ ██████  ██  ██████  ██████  ██████  ███████
+████  ████ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██     
+██ ████ ██ █████   ██   ██ ██ ██      ██    ██ ██   ██ █████  
+██  ██  ██ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██     
+██      ██ ███████ ██████  ██  ██████  ██████  ██████  ███████
 )" << endl;
-        cout << "\033[0m";
+
+cout << "\033[0m";
 
         cout << "A USSD Code for Non-critical Medical Assistance." << endl;
         cout << "MEDICODE USSD CODE: *206#" << endl << endl;
@@ -68,5 +73,3 @@ void medicodebanner()
     }
 
 }
-
-
