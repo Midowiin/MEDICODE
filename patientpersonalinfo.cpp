@@ -36,7 +36,7 @@ string generatePatientID()
 
 
 // PATIENT PERSONAL INFORMATION
-void patientpersonalinfo()
+void patientpersonalinfo(PatientData &patient)
 {
     int choice;
     int sexChoice;

@@ -1,3 +1,6 @@
+
 #pragma once
 
-void generalquestions();
+#include "patientdata.h"
+
+void generalquestions(SymptomData &symptoms);
