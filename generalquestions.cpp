@@ -1,13 +1,13 @@
 #include <iostream>
 #include "generalquestions.h"
 #include <string>
-
+#include "patientdata.h"
 using namespace std;
 
 
 
 
-   void generalquestions()
+  void generalquestions(SymptomData &symptomData)
 {
     string durations, severities, impacts, progressions;
     string warningSigns, symptoms, medications, concern_summary;

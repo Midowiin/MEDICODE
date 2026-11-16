@@ -3,7 +3,7 @@
 #include <random>
 #include <set>
 #include <string>
-
+#include "patientdata.h"
 #include "patientpersonalinfo.h"
 
 using namespace std;

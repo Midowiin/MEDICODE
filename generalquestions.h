@@ -3,4 +3,4 @@
 
 #include "patientdata.h"
 
-void generalquestions(SymptomData &symptoms);
+void generalquestions(SymptomData &symptomData);

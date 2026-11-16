@@ -7,7 +7,7 @@
 #include "patientpersonalinfo.h"
 #include "generalquestions.h"
 #include <windows.h> 
-
+#include "patientdata.h"
 using namespace std;
 
 int main()
@@ -18,12 +18,14 @@ int main()
     medicodebanner();
 
     patientconsent();
+PatientData patient;
+SymptomData symptoms;
+    patientpersonalinfo(patient);
 
-    patientpersonalinfo();
+    generalquestions(symptoms);
 
     mainmenu();
 
-    generalquestions();
 
     healthcarefacility();
 
