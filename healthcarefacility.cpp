@@ -33,7 +33,7 @@ void healthcarefacility()
         cout << "AVAILABLE PUBLIC DOCTORS" << endl;
 
         cout << "1. Pogi si Darwin" << endl;
-        cout << "2. Example Doctor B" << endl;
+        cout << "2. POGI SI DARWIN" << endl;
         cout << "3. Example Doctor C" << endl;
 
         cout << "Select Doctor: ";
