@@ -16,7 +16,7 @@ using namespace std;
 
 
     cout << endl;
-    cout << "Yo mama" << endl;
+    cout << "How long have you experienced this problem?" << endl;
     cout << "1. Today - Started today" << endl;
     cout << "2. A Few Days - Lasted 1-3 days." << endl;
     cout << "3. One Week or Longer - Lasted at least 7 days." << endl;
