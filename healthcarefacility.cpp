@@ -34,7 +34,7 @@ void healthcarefacility()
 
         cout << "1. Pogi si Darwin" << endl;
         cout << "2. POGI SI DARWIN" << endl;
-        cout << "3. Example Doctor C" << endl;
+        cout << "3. Ewerwerwer" << endl;
 
         cout << "Select Doctor: ";
         cin >> doctorChoice;
