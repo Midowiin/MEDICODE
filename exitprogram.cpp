@@ -10,4 +10,3 @@ void exitprogram()
     cout << "Thank you for using MEDICODE." << endl;
 
 }
-

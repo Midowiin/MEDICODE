@@ -16,26 +16,34 @@ void medicodebanner()
     cout << "Input USSD: ";
     cin >> code;
 
-    if (code == "*206#")
+    if (code == "2")
     {
         
         cout << "\033[1;38;5;88m";
 
 cout << R"(
-███    ███ ███████ ██████  ██  ██████  ██████  ██████  ███████
-████  ████ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██     
-██ ████ ██ █████   ██   ██ ██ ██      ██    ██ ██   ██ █████  
-██  ██  ██ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██     
-██      ██ ███████ ██████  ██  ██████  ██████  ██████  ███████
+
+███    ███ ███████ ██████  ██  ██████  ██████  ██████  ███████ 
+████  ████ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██      
+██ ████ ██ █████   ██   ██ ██ ██      ██    ██ ██   ██ █████    
+██  ██  ██ ██      ██   ██ ██ ██      ██    ██ ██   ██ ██        
+██      ██ ███████ ██████  ██  ██████  ██████  ██████  ███████ 
 )" << endl;
 
 cout << "\033[0m";
-
+        cout << "\033[1m";
         cout << "A USSD Code for Non-critical Medical Assistance." << endl;
         cout << "MEDICODE USSD CODE: *206#" << endl << endl;
+        cout << "\033[0m";
 
+        cout << "\033[1;90m";
+        cout << "----------------------------------------------------------------------------------" << endl; 
+        cout << "\033[0m"; 
+        cout << endl; 
+       
         cout << "DISCLAIMER:" << endl;
-        cout << "\033MEDICODE asks questions about your symptoms and" << endl;
+        cout << "\033[3m";
+        cout << "MEDICODE asks questions about your symptoms and" << endl;
         cout << "connects you to available General Practitioners (GPs)" << endl;
         cout << "who can provide general health guidance." << endl << endl;
 
@@ -47,7 +55,13 @@ cout << "\033[0m";
         cout << "if necessary." << endl << endl;
 
         cout << "MEDICODE does not directly diagnose illnesses or" << endl;
-        cout << "provide Specialized Practitioner consultations.\033[0m" << endl;
+        cout << "provide Specialized Practitioner consultations." << endl;
+        cout << "\033[0m";
+
+        cout << "\033[1;90m";
+        cout << "----------------------------------------------------------------------------------" << endl; 
+        cout << "\033[0m"; 
+        cout << endl; 
 
         cout << endl;
         cout << "1. Proceed" << endl;
@@ -72,4 +86,11 @@ cout << "\033[0m";
         cout << "USSD Invalid. Please Try Again." << endl;
     }
 
+}
+
+int main()
+{
+      SetConsoleOutputCP(CP_UTF8);    
+    medicodebanner();
+    return 0;
 }
