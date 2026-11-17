@@ -61,9 +61,8 @@ void patientpersonalinfo(PatientData &patient)
     cout << endl;
     cout << "I. GENERAL DATA" << endl;
 
-    cout << "Name of Patient: ";
-    getline(cin, patient.name);
-
+cout << "Name of Patient: ";
+getline(cin, patient.name);
     cout << "Age: ";
     getline(cin, patient.age);
 

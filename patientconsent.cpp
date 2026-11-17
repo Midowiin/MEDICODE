@@ -1,6 +1,6 @@
 #include <iostream>
 #include "patientconsent.h"
-
+#include <limits>
 using namespace std;
 
 void patientconsent()
@@ -16,7 +16,7 @@ void patientconsent()
     cout << "1. Agree" << endl;
     cout << "2. Disagree" << endl;
     cin >> choice;
-
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
     if (choice == 1)
     {
         cout << "patient consent";

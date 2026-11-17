@@ -1,3 +1,5 @@
 #pragma once
 
-void mainmenu();    
+#include "patientdata.h"
+
+void mainmenu(const PatientData &patient, const SymptomData &symptoms);
