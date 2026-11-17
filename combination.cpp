@@ -8,23 +8,25 @@
 #include "generalquestions.h"
 #include <windows.h> 
 #include "patientdata.h"
+
 using namespace std;
 
 int main()
 {
 
-    SetConsoleOutputCP(CP_UTF8);    
 
+    SetConsoleOutputCP(CP_UTF8);    
+PatientData patient;
+SymptomData symptoms;
     medicodebanner();
 
     patientconsent();
-PatientData patient;
-SymptomData symptoms;
-    patientpersonalinfo(patient);
 
+    patientpersonalinfo(patient);
+ mainmenu();
     generalquestions(symptoms);
 
-    mainmenu();
+   
 
 
     healthcarefacility();
