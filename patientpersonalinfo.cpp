@@ -43,43 +43,8 @@ void patientpersonalinfo(PatientData &patient)
     int option;
 
     // GENERATE PATIENT ID
-    string assignedPatientID = generatePatientID();
+  patient.patientID = generatePatientID();
 
-
-    // I. GENERAL DATA
-    string name, age, sex, address, civilStatus;
-
-    // II. HISTORY OF PRESENT ILLNESS
-    string historyPresentIllness;
-
-    // III. PAST MEDICAL HISTORY
-    string operations;
-    string immunizations;
-    string allergies;
-    string hospitalizations;
-    string maintenanceMeds;
-    string othersMedical;
-
-    // IV. FAMILY HISTORY
-    string bronchialAsthma;
-    string diabetesMellitus;
-    string hypertension;
-    string pulmonaryTuberculosis;
-    string othersFamily;
-
-    // V. SOCIAL, ENVIRONMENTAL, PERSONAL HISTORY
-    string smoker;
-    string alcoholicBeverageDrinker;
-    string workEnvironmentalHazards;
-
-    // VI. OB-GYNE HISTORY
-    string menarche;
-    string menstrualHistory;
-    string gravida;
-    string para;
-    string lastMenstrualPeriod;
-    string menopause;
-    string othersOBGyne;
 
 
     cout << endl;
@@ -89,7 +54,7 @@ void patientpersonalinfo(PatientData &patient)
 
     cout << endl;
     cout << "USER ID AND INFORMATION" << endl;
-    cout << "Patient ID: " << assignedPatientID << endl;
+    cout << "Patient ID: " << patient.patientID << endl;
 
 
     // I. GENERAL DATA
@@ -97,10 +62,10 @@ void patientpersonalinfo(PatientData &patient)
     cout << "I. GENERAL DATA" << endl;
 
     cout << "Name of Patient: ";
-    getline(cin, name);
+    getline(cin, patient.name);
 
     cout << "Age: ";
-    getline(cin, age);
+    getline(cin, patient.age);
 
     cout << endl;
     cout << "Sex:" << endl;
@@ -113,22 +78,22 @@ void patientpersonalinfo(PatientData &patient)
 
     if (sexChoice == 1)
     {
-        sex = "Male";
+        patient.sex = "Male";
     }
     else if (sexChoice == 2)
     {
-        sex = "Female";
+        patient.sex = "Female";
     }
     else
     {
-        sex = "Not Specified";
+        patient.sex = "Not Specified";
     }
 
     cout << "Address: ";
-    getline(cin, address);
+    getline(cin, patient.address);
 
     cout << "Civil Status: ";
-    getline(cin, civilStatus);
+    getline(cin, patient.civilStatus);
 
 
     // II. HISTORY OF PRESENT ILLNESS
@@ -137,7 +102,7 @@ void patientpersonalinfo(PatientData &patient)
     cout << "II. HISTORY OF PRESENT ILLNESS" << endl;
 
     cout << "History of Present Illness: ";
-    getline(cin, historyPresentIllness);
+    getline(cin, patient.historyPresentIllness);
 
 
     // III. PAST MEDICAL HISTORY
@@ -154,11 +119,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        operations = "Yes";
+        patient.operations = "Yes";
     else if (option == 2)
-        operations = "No";
+        patient.operations = "No";
     else
-        operations = "Unknown";
+        patient.operations = "Unknown";
 
 
     cout << endl;
@@ -170,11 +135,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        immunizations = "Complete";
+        patient.immunizations = "Complete";
     else if (option == 2)
-        immunizations = "Incomplete";
+        patient.immunizations = "Incomplete";
     else
-        immunizations = "Unknown";
+        patient.immunizations = "Unknown";
 
 
     cout << endl;
@@ -186,11 +151,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        allergies = "Yes";
+        patient.allergies = "Yes";
     else if (option == 2)
-        allergies = "No";
+        patient.allergies = "No";
     else
-        allergies = "Unknown";
+        patient.allergies = "Unknown";
 
 
     cout << endl;
@@ -202,11 +167,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        hospitalizations = "Yes";
+        patient.hospitalizations = "Yes";
     else if (option == 2)
-        hospitalizations = "No";
+        patient.hospitalizations = "No";
     else
-        hospitalizations = "Unknown";
+        patient.hospitalizations = "Unknown";
 
 
     cout << endl;
@@ -218,11 +183,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        maintenanceMeds = "Yes";
+        patient.maintenanceMeds = "Yes";
     else if (option == 2)
-        maintenanceMeds = "No";
+        patient.maintenanceMeds = "No";
     else
-        maintenanceMeds = "Unknown";
+        patient.maintenanceMeds = "Unknown";
 
 
     cout << endl;
@@ -233,9 +198,9 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        othersMedical = "Yes";
+        patient.othersMedical = "Yes";
     else
-        othersMedical = "No";
+        patient.othersMedical = "No";
 
 
     // IV. FAMILY HISTORY
@@ -252,11 +217,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        bronchialAsthma = "Yes";
+        patient.bronchialAsthma = "Yes";
     else if (option == 2)
-        bronchialAsthma = "No";
+        patient.bronchialAsthma = "No";
     else
-        bronchialAsthma = "Unknown";
+        patient.bronchialAsthma = "Unknown";
 
 
     cout << endl;
@@ -268,11 +233,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        diabetesMellitus = "Yes";
+        patient.diabetesMellitus = "Yes";
     else if (option == 2)
-        diabetesMellitus = "No";
+        patient.diabetesMellitus = "No";
     else
-        diabetesMellitus = "Unknown";
+        patient.diabetesMellitus = "Unknown";
 
 
     cout << endl;
@@ -284,11 +249,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        hypertension = "Yes";
+        patient.hypertension = "Yes";
     else if (option == 2)
-        hypertension = "No";
+        patient.hypertension = "No";
     else
-        hypertension = "Unknown";
+        patient.hypertension = "Unknown";
 
 
     cout << endl;
@@ -300,11 +265,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        pulmonaryTuberculosis = "Yes";
+        patient.pulmonaryTuberculosis = "Yes";
     else if (option == 2)
-        pulmonaryTuberculosis = "No";
+        patient.pulmonaryTuberculosis = "No";
     else
-        pulmonaryTuberculosis = "Unknown";
+       patient.pulmonaryTuberculosis = "Unknown";
 
 
     cout << endl;
@@ -315,9 +280,9 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        othersFamily = "Yes";
+        patient.othersFamily = "Yes";
     else
-        othersFamily = "No";
+        patient.othersFamily = "No";
 
 
     // V. SOCIAL, ENVIRONMENTAL, PERSONAL HISTORY
@@ -335,11 +300,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        smoker = "Yes";
+        patient.smoker = "Yes";
     else if (option == 2)
-        smoker = "No";
+        patient.smoker = "No";
     else
-        smoker = "Former Smoker";
+        patient.smoker = "Former Smoker";
 
 
     cout << endl;
@@ -351,11 +316,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        alcoholicBeverageDrinker = "Yes";
+        patient.alcoholicBeverageDrinker = "Yes";
     else if (option == 2)
-        alcoholicBeverageDrinker = "No";
+       patient.alcoholicBeverageDrinker = "No";
     else
-        alcoholicBeverageDrinker = "Occasionally";
+        patient. alcoholicBeverageDrinker = "Occasionally";
 
 
     cout << endl;
@@ -367,11 +332,11 @@ void patientpersonalinfo(PatientData &patient)
     cin >> option;
 
     if (option == 1)
-        workEnvironmentalHazards = "Yes";
+        patient.workEnvironmentalHazards = "Yes";
     else if (option == 2)
-        workEnvironmentalHazards = "No";
+        patient.workEnvironmentalHazards = "No";
     else
-        workEnvironmentalHazards = "Unknown";
+        patient.workEnvironmentalHazards = "Unknown";
 
 
     // VI. OB-GYNE HISTORY
@@ -394,15 +359,15 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            menarche = "Before 10 years old";
+            patient.menarche = "Before 10 years old";
         else if (option == 2)
-            menarche = "10-12 years old";
+            patient.menarche = "10-12 years old";
         else if (option == 3)
-            menarche = "13-15 years old";
+            patient.menarche = "13-15 years old";
         else if (option == 4)
-            menarche = "16 years old or above";
+            patient.menarche = "16 years old or above";
         else
-            menarche = "Unknown";
+            patient.menarche = "Unknown";
 
 
         cout << endl;
@@ -415,13 +380,13 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            menstrualHistory = "Regular";
+            patient.menstrualHistory = "Regular";
         else if (option == 2)
-            menstrualHistory = "Irregular";
+            patient.menstrualHistory = "Irregular";
         else if (option == 3)
-            menstrualHistory = "Not Applicable";
+            patient.menstrualHistory = "Not Applicable";
         else
-            menstrualHistory = "Unknown";
+            patient.menstrualHistory = "Unknown";
 
 
         cout << endl;
@@ -435,15 +400,15 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            gravida = "0";
+            patient.gravida = "0";
         else if (option == 2)
-            gravida = "1";
+            patient.gravida = "1";
         else if (option == 3)
-            gravida = "2";
+            patient.gravida = "2";
         else if (option == 4)
-            gravida = "3 or more";
+            patient.gravida = "3 or more";
         else
-            gravida = "Unknown";
+            patient.gravida = "Unknown";
 
 
         cout << endl;
@@ -457,15 +422,15 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            para = "No living children";
+            patient.para = "No living children";
         else if (option == 2)
-            para = "One living child";
+            patient.para = "One living child";
         else if (option == 3)
-            para = "Two living children";
+            patient.para = "Two living children";
         else if (option == 4)
-            para = "Three or more living children";
+            patient.para = "Three or more living children";
         else
-            para = "Unknown";
+            patient.para = "Unknown";
 
 
         cout << endl;
@@ -478,13 +443,13 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            lastMenstrualPeriod = "Within the last month";
+            patient.lastMenstrualPeriod = "Within the last month";
         else if (option == 2)
-            lastMenstrualPeriod = "1-3 months ago";
+            patient.lastMenstrualPeriod = "1-3 months ago";
         else if (option == 3)
-            lastMenstrualPeriod = "More than 3 months ago";
+            patient.lastMenstrualPeriod = "More than 3 months ago";
         else
-            lastMenstrualPeriod = "Unknown";
+            patient.lastMenstrualPeriod = "Unknown";
 
 
         cout << endl;
@@ -496,11 +461,11 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            menopause = "Yes";
+            patient.menopause = "Yes";
         else if (option == 2)
-            menopause = "No";
+            patient.menopause = "No";
         else
-            menopause = "Unknown";
+            patient.menopause = "Unknown";
 
 
         cout << endl;
@@ -511,9 +476,9 @@ void patientpersonalinfo(PatientData &patient)
         cin >> option;
 
         if (option == 1)
-            othersOBGyne = "Yes";
+            patient.othersOBGyne = "Yes";
         else
-            othersOBGyne = "No";
+            patient.othersOBGyne = "No";
     }
 
 
@@ -524,48 +489,48 @@ void patientpersonalinfo(PatientData &patient)
     cout << "=============================================" << endl;
 
     cout << endl;
-    cout << "Patient ID: " << assignedPatientID << endl;
+    cout << "Patient ID: " << patient.patientID << endl;
 
     cout << endl;
     cout << "I. GENERAL DATA" << endl;
-    cout << "Name: " << name << endl;
-    cout << "Age: " << age << endl;
-    cout << "Sex: " << sex << endl;
-    cout << "Address: " << address << endl;
-    cout << "Civil Status: " << civilStatus << endl;
+    cout << "Name: " << patient.name << endl;
+    cout << "Age: " << patient.age << endl;
+    cout << "Sex: " << patient.sex << endl;
+    cout << "Address: " << patient.address << endl;
+    cout << "Civil Status: " << patient.civilStatus << endl;
 
 
     cout << endl;
     cout << "II. HISTORY OF PRESENT ILLNESS" << endl;
-    cout << historyPresentIllness << endl;
+    cout << patient.historyPresentIllness << endl;
 
 
     cout << endl;
     cout << "III. PAST MEDICAL HISTORY" << endl;
-    cout << "Operations: " << operations << endl;
-    cout << "Immunizations: " << immunizations << endl;
-    cout << "Allergies: " << allergies << endl;
-    cout << "Hospitalizations: " << hospitalizations << endl;
-    cout << "Maintenance Medications: " << maintenanceMeds << endl;
-    cout << "Others: " << othersMedical << endl;
+    cout << "Operations: " << patient.operations << endl;
+    cout << "Immunizations: " << patient.immunizations << endl;
+    cout << "Allergies: " << patient.allergies << endl;
+    cout << "Hospitalizations: " << patient.hospitalizations << endl;
+    cout << "Maintenance Medications: " << patient.maintenanceMeds << endl;
+    cout << "Others: " << patient.othersMedical << endl;
 
 
     cout << endl;
     cout << "IV. FAMILY HISTORY" << endl;
-    cout << "Bronchial Asthma: " << bronchialAsthma << endl;
-    cout << "Diabetes Mellitus: " << diabetesMellitus << endl;
-    cout << "Hypertension: " << hypertension << endl;
-    cout << "Pulmonary Tuberculosis: " << pulmonaryTuberculosis << endl;
-    cout << "Others: " << othersFamily << endl;
+    cout << "Bronchial Asthma: " << patient.bronchialAsthma << endl;
+    cout << "Diabetes Mellitus: " <<patient.diabetesMellitus << endl;
+    cout << "Hypertension: " << patient.hypertension << endl;
+    cout << "Pulmonary Tuberculosis: " << patient.pulmonaryTuberculosis << endl;
+    cout << "Others: " << patient.othersFamily << endl;
 
 
     cout << endl;
     cout << "V. SOCIAL, ENVIRONMENTAL, PERSONAL HISTORY" << endl;
-    cout << "Smoker: " << smoker << endl;
+    cout << "Smoker: " << patient.smoker << endl;
     cout << "Alcoholic Beverage Drinker: "
-         << alcoholicBeverageDrinker << endl;
+         << patient.alcoholicBeverageDrinker << endl;
     cout << "Work/Environmental Hazards: "
-         << workEnvironmentalHazards << endl;
+         << patient.workEnvironmentalHazards << endl;
 
 
     // SHOW OB-GYNE SUMMARY ONLY FOR FEMALE
@@ -573,14 +538,14 @@ void patientpersonalinfo(PatientData &patient)
     {
         cout << endl;
         cout << "VI. OB-GYNE HISTORY" << endl;
-        cout << "Menarche: " << menarche << endl;
-        cout << "Menstrual History: " << menstrualHistory << endl;
-        cout << "Gravida: " << gravida << endl;
-        cout << "Para: " << para << endl;
+        cout << "Menarche: " << patient.menarche << endl;
+        cout << "Menstrual History: " << patient.menstrualHistory << endl;
+        cout << "Gravida: " << patient.gravida << endl;
+        cout << "Para: " <<patient.para << endl;
         cout << "Last Menstrual Period: "
-             << lastMenstrualPeriod << endl;
-        cout << "Menopause: " << menopause << endl;
-        cout << "Others: " << othersOBGyne << endl;
+             << patient.lastMenstrualPeriod << endl;
+        cout << "Menopause: " << patient.menopause << endl;
+        cout << "Others: " << patient.othersOBGyne << endl;
     }
 
 
