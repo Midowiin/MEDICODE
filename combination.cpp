@@ -12,23 +12,22 @@
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);
 
+    PatientData patient;
+    SymptomData symptoms;
 
-    SetConsoleOutputCP(CP_UTF8);    
-PatientData patient;
-SymptomData symptoms;
     medicodebanner();
 
     patientconsent();
 
     patientpersonalinfo(patient);
- mainmenu();
+
     generalquestions(symptoms);
 
-   
-
-
     healthcarefacility();
+
+    mainmenu(patient, symptoms);
 
     exitprogram();
 
