@@ -8,8 +8,7 @@
 #include "generalquestions.h"
 #include <windows.h> 
 #include "patientdata.h"
-
-using namespace std;
+#include "pdfgenerator.h"
 
 int main()
 {
