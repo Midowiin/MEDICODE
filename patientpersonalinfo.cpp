@@ -1,9 +1,8 @@
 #include <iostream>
 #include <limits>
 #include <random>
-#include <set>
 #include <string>
-
+#include <set>
 #include "patientpersonalinfo.h"
 
 using namespace std;
@@ -114,16 +113,11 @@ void patientpersonalinfo()
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    if (sexChoice == 1)
-    {
+    if (sexChoice == 1) {
         sex = "Male";
-    }
-    else if (sexChoice == 2)
-    {
+    } else if (sexChoice == 2) {
         sex = "Female";
-    }
-    else
-    {
+    } else {
         sex = "Not Specified";
     }
 
@@ -146,24 +140,15 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-    {
+    if (option == 1) {
         historyPresentIllness = "Fever";
-    }
-    else if (option == 2)
-    {
+    } else if (option == 2) {
         historyPresentIllness = "Coughing/Cold";
-    }
-    else if (option == 3)
-    {
+    } else if (option == 3) {
         historyPresentIllness = "Pain/Ache";
-    }
-    else if (option == 4)
-    {
+    } else if (option == 4) {
         historyPresentIllness = "Dizziness/Fatigue";
-    }
-    else if (option == 5)
-    {
+    } else if (option == 5) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         do {
@@ -184,9 +169,7 @@ void patientpersonalinfo()
         } while (moreChoice == 2);
 
         historyPresentIllness = tempOthers;
-    }
-    else
-    {
+    } else {
         historyPresentIllness = "Not Specified";
     }
 
@@ -203,12 +186,17 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-        operations = "Yes";
-    else if (option == 2)
+    if (option == 1) {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, operations);
+    } else if (option == 2) {
         operations = "No";
-    else
+    } else if (option == 3) {
         operations = "Unknown";
+    } else {
+        operations = "Not Specified";
+    }
 
 
     cout << endl;
@@ -219,12 +207,19 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-        immunizations = "Complete";
-    else if (option == 2)
-        immunizations = "Incomplete";
-    else
+    if (option == 1) {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, immunizations);
+    } else if (option == 2) {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify what immunizations are incomplete (If you don't know, please type 'Unknown'): ";
+        getline(cin, immunizations);
+    } else if (option == 3) {
         immunizations = "Unknown";
+    } else {
+        immunizations = "Not Specified";
+    }
 
 
     cout << endl;
@@ -236,11 +231,17 @@ void patientpersonalinfo()
     cin >> option;
 
     if (option == 1)
-        allergies = "Yes";
-    else if (option == 2)
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, allergies);
+    } else if (option == 2) {
         allergies = "No";
-    else
+    } else if (option == 3) {
         allergies = "Unknown";
+    } else {
+        allergies = "Not Specified";
+    }
 
 
     cout << endl;
@@ -252,11 +253,17 @@ void patientpersonalinfo()
     cin >> option;
 
     if (option == 1)
-        hospitalizations = "Yes";
-    else if (option == 2)
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, hospitalizations);
+    } else if (option == 2) {
         hospitalizations = "No";
-    else
+    } else if (option == 3) {
         hospitalizations = "Unknown";
+    } else {
+        hospitalizations = "Not Specified";
+    }
 
 
     cout << endl;
@@ -267,32 +274,35 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-        maintenanceMeds = "Yes";
-    else if (option == 2)
+    if (option == 1) {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, maintenanceMeds);
+    } else if (option == 2) {
         maintenanceMeds = "No";
-    else
+    } else if (option == 3) {
         maintenanceMeds = "Unknown";
+    } else {
+        maintenanceMeds = "Not Specified";
+    }
 
 
     cout << endl;
-    cout << "OTHERS:" << endl;
+    cout << "OTHERS" << endl;
     cout << "1. Yes" << endl;
     cout << "2. No" << endl;
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-    {
+    if (option == 1) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Please specify: ";
-        getline(cin, othersMedical);
-    }
-    else
-    {
+        getline(cin, maintenanceMeds);
+    } else if (option == 2) {
         othersMedical = "No";
+    } else {
+        othersMedical = "Not Specified";
     }
-
 
     // IV. FAMILY HISTORY
     cout << endl;
@@ -307,12 +317,15 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         bronchialAsthma = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         bronchialAsthma = "No";
-    else
+    } else if (option == 3) {
         bronchialAsthma = "Unknown";
+    } else {
+        bronchialAsthma = "Not Specified";
+    }
 
 
     cout << endl;
@@ -323,13 +336,15 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         diabetesMellitus = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         diabetesMellitus = "No";
-    else
+    } else if (option == 3) {
         diabetesMellitus = "Unknown";
-
+    } else {
+        diabetesMellitus = "Not Specified";
+    }
 
     cout << endl;
     cout << "HYPERTENSION:" << endl;
@@ -339,13 +354,15 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         hypertension = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         hypertension = "No";
-    else
+    } else if (option == 3) {
         hypertension = "Unknown";
-
+    } else {
+        hypertension = "Not Specified";
+    }
 
     cout << endl;
     cout << "PULMONARY TUBERCULOSIS:" << endl;
@@ -355,32 +372,33 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         pulmonaryTuberculosis = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         pulmonaryTuberculosis = "No";
-    else
+    } else if (option == 3) {
         pulmonaryTuberculosis = "Unknown";
+    } else {
+        pulmonaryTuberculosis = "Not Specified";
+    }
 
 
     cout << endl;
-    cout << "OTHERS:" << endl;
+    cout << "OTHERS" << endl;
     cout << "1. Yes" << endl;
     cout << "2. No" << endl;
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-    {
+    if (option == 1) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Please specify: ";
-        getline(cin, othersFamily);
+        getline(cin, maintenanceMeds);
+    } else if (option == 2) {
+        othersMedical = "No";
+    } else {
+        othersMedical = "Not Specified";
     }
-    else
-    {
-        othersFamily = "No";
-    }
-
 
     // V. SOCIAL, ENVIRONMENTAL, PERSONAL HISTORY
 
@@ -396,13 +414,13 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         smoker = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         smoker = "No";
-    else
+    } else {
         smoker = "Former Smoker";
-
+    }
 
     cout << endl;
     cout << "ALCOHOLIC BEVERAGE DRINKER:" << endl;
@@ -412,13 +430,13 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
+    if (option == 1) {
         alcoholicBeverageDrinker = "Yes";
-    else if (option == 2)
+    } else if (option == 2) {
         alcoholicBeverageDrinker = "No";
-    else
+    } else {
         alcoholicBeverageDrinker = "Occasionally";
-
+    }
 
     cout << endl;
     cout << "WORK/ENVIRONMENTAL HAZARDS:" << endl;
@@ -428,19 +446,20 @@ void patientpersonalinfo()
     cout << "Enter choice: ";
     cin >> option;
 
-    if (option == 1)
-        workEnvironmentalHazards = "Yes";
-    else if (option == 2)
+    if (option == 1) {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, workEnvironmentalHazards);
+    } else if (option == 2) {
         workEnvironmentalHazards = "No";
-    else
+    } else {
         workEnvironmentalHazards = "Unknown";
-
+    }
 
     // VI. OB-GYNE HISTORY
     // FEMALE only
 
-    if (sexChoice == 2)
-    {
+    if (sexChoice == 2) {
         cout << endl;
         cout << "VI. OB-GYNE HISTORY" << endl;
 
@@ -455,18 +474,18 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             menarche = "Before 10 years old";
-        else if (option == 2)
+        } else if (option == 2) {
             menarche = "10-12 years old";
-        else if (option == 3)
+        } else if (option == 3) {
             menarche = "13-15 years old";
-        else if (option == 4)
+        } else if (option == 4) {
             menarche = "16 years old or above";
-        else
+        } else {
             menarche = "Unknown";
-
-
+        }
+    } 
         cout << endl;
         cout << "MENSTRUAL HISTORY:" << endl;
         cout << "1. Regular" << endl;
@@ -476,15 +495,15 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             menstrualHistory = "Regular";
-        else if (option == 2)
+        } else if (option == 2) {
             menstrualHistory = "Irregular";
-        else if (option == 3)
+        } else if (option == 3) {
             menstrualHistory = "Not Applicable";
-        else
+        } else {
             menstrualHistory = "Unknown";
-
+        }
 
         cout << endl;
         cout << "GRAVIDA (Number of pregnancies):" << endl;
@@ -496,17 +515,17 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             gravida = "0";
-        else if (option == 2)
+        } else if (option == 2) {
             gravida = "1";
-        else if (option == 3)
+        } else if (option == 3) {
             gravida = "2";
-        else if (option == 4)
+        } else if (option == 4) {
             gravida = "3 or more";
-        else
+        } else {
             gravida = "Unknown";
-
+        }
 
         cout << endl;
         cout << "PARA (Number of living children):" << endl;
@@ -518,17 +537,17 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             para = "No living children";
-        else if (option == 2)
+        } else if (option == 2) {
             para = "One living child";
-        else if (option == 3)
+        } else if (option == 3) {
             para = "Two living children";
-        else if (option == 4)
+        } else if (option == 4) {
             para = "Three or more living children";
-        else
+        } else {
             para = "Unknown";
-
+        }
 
         cout << endl;
         cout << "LAST MENSTRUAL PERIOD:" << endl;
@@ -539,15 +558,15 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             lastMenstrualPeriod = "Within the last month";
-        else if (option == 2)
+        } else if (option == 2) {
             lastMenstrualPeriod = "1-3 months ago";
-        else if (option == 3)
+        } else if (option == 3) {
             lastMenstrualPeriod = "More than 3 months ago";
-        else
+        } else {
             lastMenstrualPeriod = "Unknown";
-
+        }
 
         cout << endl;
         cout << "MENOPAUSE (Permanent cessation of menstruation):" << endl;
@@ -557,13 +576,13 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
+        if (option == 1) {
             menopause = "Yes";
-        else if (option == 2)
+        } else if (option == 2) {
             menopause = "No";
-        else
+        } else {
             menopause = "Unknown";
-
+        }
 
         cout << endl;
         cout << "OTHERS:" << endl;
@@ -572,17 +591,14 @@ void patientpersonalinfo()
         cout << "Enter choice: ";
         cin >> option;
 
-        if (option == 1)
-        {
+        if (option == 1) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Please specify: ";
             getline(cin, othersOBGyne);
-        }
-        else
-        {
+        } else {
             othersOBGyne = "No";
         }
-    }
+    
 
 
     // PATIENT SUMMARY
@@ -679,6 +695,8 @@ void patientpersonalinfo()
         cout << "Invalid choice." << endl;
     }
 }
+        
+    
 
 int main()
 {
