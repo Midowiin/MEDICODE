@@ -12,22 +12,14 @@ using namespace std;
 
 int main()
 {
-
-    SetConsoleOutputCP(CP_UTF8);    
-
+    
     medicodebanner();
 
     patientconsent();
 
-    patientpersonalinfo();
-
     mainmenu();
 
-    generalquestions();
-
-    healthcarefacility();
-
-    exitprogram();
+    patientpersonalinfo();
 
     return 0;
 }

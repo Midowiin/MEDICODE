@@ -8,15 +8,22 @@ void patientconsent()
     int choice;
 
     cout << endl;
-    cout << "PATIENT CONSENT" << endl;
-    cout << "Your personal and medical information will be" << endl;
-    cout << "collected to help provide healthcare navigation" << endl;
-    cout << "and connect you with a GP." << endl << endl;
+    cout << "===============================================================" << endl;
+    cout << "                      PATIENT CONSENT" << endl;
+    cout << "===============================================================" << endl;
+    cout << "\033[3m";
+    cout << "       Your personal and medical information will be" << endl;
+    cout << "       collected to help provide healthcare navigation" << endl;
+    cout << "       and connect you with a GP." << endl << endl;
+    cout << "\033[0m";
+
 
     cout << "1. Agree" << endl;
     cout << "2. Disagree" << endl;
     cin >> choice;
 
+    cout << "===============================================================" << endl;
+    cout << endl;
     if (choice == 1)
     {
         cout << "patient consent";

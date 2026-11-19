@@ -9,7 +9,7 @@
 using namespace std;
 
 
-// STORES GENERATED PATIENT IDs
+// STORES GENERATED PATIENT IDS
 set<string> usedPatientIDs;
 
 
@@ -84,7 +84,7 @@ void patientpersonalinfo()
 
     cout << endl;
     cout << "=============================================" << endl;
-    cout << "           PATIENT'S INFORMATION" << endl;
+    cout << "            PATIENT'S INFORMATION" << endl;
     cout << "=============================================" << endl;
 
     cout << endl;
@@ -233,9 +233,15 @@ void patientpersonalinfo()
     cin >> option;
 
     if (option == 1)
-        othersMedical = "Yes";
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, othersMedical);
+    }
     else
+    {
         othersMedical = "No";
+    }
 
 
     // IV. FAMILY HISTORY
@@ -315,9 +321,15 @@ void patientpersonalinfo()
     cin >> option;
 
     if (option == 1)
-        othersFamily = "Yes";
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please specify: ";
+        getline(cin, othersFamily);
+    }
     else
+    {
         othersFamily = "No";
+    }
 
 
     // V. SOCIAL, ENVIRONMENTAL, PERSONAL HISTORY
@@ -511,9 +523,15 @@ void patientpersonalinfo()
         cin >> option;
 
         if (option == 1)
-            othersOBGyne = "Yes";
+        {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Please specify: ";
+            getline(cin, othersOBGyne);
+        }
         else
+        {
             othersOBGyne = "No";
+        }
     }
 
 
@@ -611,4 +629,3 @@ void patientpersonalinfo()
         cout << "Invalid choice." << endl;
     }
 }
-
