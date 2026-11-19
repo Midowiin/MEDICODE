@@ -1,12 +1,23 @@
-
 #include <iostream>
 #include <cstdio>
+#include <string>
 #include "pdfgenerator.h"
-#include "PDFGen/pdfgen.h"
+#include "PDFgen/pdfgen.h"
 
 using namespace std;
 
-void generatePatientPDF(const PatientData &patient, const SymptomData &symptomData)
+// Adds a line of text to the PDF and moves the next line downward.
+void addPDFText(pdf_doc *pdf, const string &text,
+                double fontSize, double &positionY)
+{
+    pdf_add_text(pdf, NULL, text.c_str(),
+                 fontSize, 50, positionY, PDF_BLACK);
+
+    positionY -= 20;
+}
+
+void generatePatientPDF(const PatientData &patient,
+                        const SymptomData &symptomData)
 {
     struct pdf_info info = {};
 
@@ -17,34 +28,51 @@ void generatePatientPDF(const PatientData &patient, const SymptomData &symptomDa
 
     if (pdf == NULL)
     {
-        cout << "PDF creation failed!";
+        cout << "PDF creation failed!" << endl;
         return;
     }
 
     pdf_set_font(pdf, "Helvetica");
     pdf_append_page(pdf);
 
-    pdf_add_text(pdf, NULL, "MEDICODE", 24, 50, 780, PDF_BLACK);
-    pdf_add_text(pdf, NULL, "PATIENT SUMMARY", 16, 50, 740, PDF_BLACK);
+    double positionY = 780;
 
-    pdf_add_text(pdf, NULL, "PATIENT INFORMATION", 14, 50, 700, PDF_BLACK);
+    // MEDICODE HEADER
 
-    pdf_add_text(pdf, NULL, ("Patient ID: " + patient.patientID).c_str(), 12, 50, 675, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Name: " + patient.name).c_str(), 12, 50, 655, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Age: " + patient.age).c_str(), 12, 50, 635, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Sex: " + patient.sex).c_str(), 12, 50, 615, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Address: " + patient.address).c_str(), 12, 50, 595, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Civil Status: " + patient.civilStatus).c_str(), 12, 50, 575, PDF_BLACK);
+    addPDFText(pdf, "MEDICODE", 24, positionY);
+    positionY -= 10;
 
-    pdf_add_text(pdf, NULL, "SYMPTOM SUMMARY", 14, 50, 535, PDF_BLACK);
+    addPDFText(pdf, "PATIENT SUMMARY", 16, positionY);
+    positionY -= 10;
 
-    pdf_add_text(pdf, NULL, ("Duration: " + symptomData.duration).c_str(), 12, 50, 510, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Severity: " + symptomData.severity).c_str(), 12, 50, 490, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Impact: " + symptomData.impact).c_str(), 12, 50, 470, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Progression: " + symptomData.progression).c_str(), 12, 50, 450, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Other Symptoms: " + symptomData.symptoms).c_str(), 12, 50, 430, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Warning Signs: " + symptomData.warningSigns).c_str(), 12, 50, 410, PDF_BLACK);
-    pdf_add_text(pdf, NULL, ("Medication/Treatment: " + symptomData.medications).c_str(), 12, 50, 390, PDF_BLACK);
+    // PATIENT INFORMATION
+
+    addPDFText(pdf, "PATIENT INFORMATION", 14, positionY);
+    positionY -= 5;
+
+    addPDFText(pdf, "Patient ID: " + patient.patientID, 12, positionY);
+    addPDFText(pdf, "Name: " + patient.name, 12, positionY);
+    addPDFText(pdf, "Age: " + patient.age, 12, positionY);
+    addPDFText(pdf, "Sex: " + patient.sex, 12, positionY);
+    addPDFText(pdf, "Address: " + patient.address, 12, positionY);
+    addPDFText(pdf, "Civil Status: " + patient.civilStatus, 12, positionY);
+
+    positionY -= 15;
+
+    // SYMPTOM SUMMARY
+
+    addPDFText(pdf, "SYMPTOM SUMMARY", 14, positionY);
+    positionY -= 5;
+
+    addPDFText(pdf, "Duration: " + symptomData.duration, 12, positionY);
+    addPDFText(pdf, "Severity: " + symptomData.severity, 12, positionY);
+    addPDFText(pdf, "Impact: " + symptomData.impact, 12, positionY);
+    addPDFText(pdf, "Progression: " + symptomData.progression, 12, positionY);
+    addPDFText(pdf, "Other Symptoms: " + symptomData.symptoms, 12, positionY);
+    addPDFText(pdf, "Warning Signs: " + symptomData.warningSigns, 12, positionY);
+    addPDFText(pdf, "Medication/Treatment: " + symptomData.medications, 12, positionY);
+
+    // SAVE PDF
 
     int result = pdf_save(pdf, "MEDICODE_Summary.pdf");
 
