@@ -41,6 +41,7 @@ void patientpersonalinfo()
     int choice;
     int sexChoice;
     int option;
+    int moreChoice;
 
     // GENERATE PATIENT ID
     string assignedPatientID = generatePatientID();
@@ -51,6 +52,8 @@ void patientpersonalinfo()
 
     // II. HISTORY OF PRESENT ILLNESS
     string historyPresentIllness;
+    string tempOthers;
+    string entry;
 
     // III. PAST MEDICAL HISTORY
     string operations;
@@ -162,14 +165,30 @@ void patientpersonalinfo()
     else if (option == 5)
     {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Please specify: ";
-        getline(cin, historyPresentIllness);
+
+        do {
+            cout << "Please specify: ";
+            getline(cin, historyPresentIllness);
+
+            if (tempOthers.empty()) {
+                tempOthers = entry;
+            }
+            else {
+                tempOthers += ", " + entry;
+            }
+
+            cout << endl;
+            cout << "Is that all? (1. Yes, 2. No): ";
+            cin >> moreChoice;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } while (moreChoice == 2);
+
+        historyPresentIllness = tempOthers;
     }
     else
     {
         historyPresentIllness = "Not Specified";
     }
-
 
     // III. PAST MEDICAL HISTORY
     cout << endl;
@@ -659,4 +678,10 @@ void patientpersonalinfo()
     {
         cout << "Invalid choice." << endl;
     }
+}
+
+int main()
+{
+    patientpersonalinfo();
+    return 0;
 }
