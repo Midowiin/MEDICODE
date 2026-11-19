@@ -46,16 +46,10 @@ void genquesnum2(SymptomData &symptomData)
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if (choice == 1)
-    {
-        symptomData.severity = "Mild";
-    }
-    else if (choice == 2)
-    {
+    if (choice == 1) { symptomData.severity = "Mild";
+     } else if (choice == 2) {
         symptomData.severity = "Moderate";
-    }
-    else
-    {
+    } else {
         symptomData.severity = "Severe";
     }
 }
@@ -72,20 +66,12 @@ void genquesnum3(SymptomData &symptomData)
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if (choice == 1)
-    {
-        symptomData.impact = "Not at All";
-    }
-    else if (choice == 2)
-    {
+    if (choice == 1) { symptomData.impact = "Not at All";
+    } else if (choice == 2) {
         symptomData.impact = "Slightly";
-    }
-    else if (choice == 3)
-    {
+    } else if (choice == 3) {
         symptomData.impact = "Moderately";
-    }
-    else
-    {
+    } else {
         symptomData.impact = "Not Sure";
     }
 }
@@ -103,19 +89,13 @@ void genquesnum4(SymptomData &symptomData)
     cin >> choice;
 
     if (choice == 1)
-    {
-        symptomData.progression = "Yes - Becoming more severe";
-    }
-    else if (choice == 2)
-    {
+     {
+     symptomData.progression = "Yes - Becoming more severe";
+    } else if (choice == 2) {
         symptomData.progression = "No - Staying the same";
-    }
-    else if (choice == 3)
-    {
+    } else if (choice == 3) {
         symptomData.progression = "Improving - Getting better";
-    }
-    else
-    {
+    } else {
         symptomData.progression = "Not Sure";
     }
 }
