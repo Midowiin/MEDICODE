@@ -20,7 +20,7 @@ void medicodebanner()
 
     if (code == "*206#")
     {
-    
+    SetConsoleOutputCP(CP_UTF8);
         cout << "\033[1;38;5;88m";
 
 cout << R"(
@@ -40,7 +40,7 @@ cout << "\033[0m";
         cout << "\033[0m";
 
         cout << "===============================================================" << endl;
-        cout << "                         DISCLAIMER:" << endl;
+        cout << "\033[1m                        DISCLAIMER:\033[0m" << endl;
         cout << "===============================================================" << endl;
         cout << endl; 
        
@@ -68,6 +68,9 @@ cout << "\033[0m";
         cout << endl;
         cout << "1. Proceed" << endl;
         cout << "2. No" << endl;
+
+        cout << endl;
+        cout << "Enter your choice: ";
         cin >> choice;
 
         if (choice == 1)
@@ -89,4 +92,10 @@ cout << "\033[0m";
         cout << "USSD Invalid. Please Try Again." << endl;
     }
 
+}
+
+int main()
+{
+    medicodebanner();
+    return 0;
 }

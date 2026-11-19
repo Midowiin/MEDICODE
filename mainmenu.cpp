@@ -12,9 +12,9 @@ void mainmenu()
     int choice;
 
     cout << endl;
-    cout << "========================================" << endl;
-    cout << "              MAIN MENU" << endl;
-    cout << "========================================" << endl;
+    cout << "===============================================================" << endl;
+    cout << "                          \033[1mMAIN MENU\033[0m" << endl;
+    cout << "===============================================================" << endl;
 
     cout << "1. REQUEST A DOCTOR" << endl;
     cout << "2. PATIENT PROFILE" << endl;

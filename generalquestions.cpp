@@ -3,6 +3,7 @@
 #include <string>
 #include <limits>
 #include "generalquestions.h"
+#include "healthcarefacility.h"
 
 using namespace std;
 
@@ -234,7 +235,9 @@ void generalquestions()
         {
             cout << endl;
             cout << "Connecting to an Available General Practitioner..." << endl;
-            cout << "Doctor connection feature is not yet implemented." << endl;
+            healthcarefacility();
+            cout << endl;
+        
             break;
         }
 
@@ -262,9 +265,3 @@ void generalquestions()
     }
 }
 
-// TEMPORARY MAIN FUNCTION FOR INDEPENDENT TESTING
-int main()
-{
-    generalquestions();
-    return 0;
-}
