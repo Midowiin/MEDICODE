@@ -52,9 +52,3 @@ void mainmenu()
         }
     }
 }
-
-int main()
-{
-    mainmenu();
-    return 0;
-}

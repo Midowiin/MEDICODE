@@ -1,5 +1,7 @@
 #include <iostream>
 #include "patientconsent.h"
+#include "exitprogram.h"
+#include "mainmenu.h"
 
 using namespace std;
 
@@ -26,16 +28,23 @@ void patientconsent()
     cout << endl;
     if (choice == 1)
     {
-        cout << "patient consent";
+        mainmenu();
     }
     else if (choice == 2)
     {
-        cout << "END PROGRAM" << endl;
+        exitprogram();
     }
+
     else
     {
         cout << "Invalid choice. Please choose either 1 or 2." << endl;
     }
+}
+
+int main()
+{
+    patientconsent();
+    return 0;
 }
 
 
