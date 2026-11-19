@@ -104,7 +104,7 @@ void healthcarefacility()
             case 1:
 
                 number = "09162483957                              \033[31m||\033[0m";
-                location = "Iloilo Mission Hospital                  \033[31m||\033[0m";
+                location = "Iloilo Mission HospitalL                  \033[31m||\033[0m";
                 fee = "1000 PHP                                 \033[31m||\033[0m";
                 day = "Monday, Tuesday, Saturday                \033[31m||\033[0m";
                 time = "9:00 AM - 12:00 AM and 3:00 PM - 5:00 PM \033[31m||\033[0m";
