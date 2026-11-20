@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
+#include <limits>
 #include "generalquestions.h"
 #include "healthcarefacility.h"
 
 using namespace std;
 
-void genquesnum1(SymptomData &symptomData)
+bool genquesnum1(SymptomData &symptomData)
 {
     int choice;
 
@@ -14,28 +15,43 @@ void genquesnum1(SymptomData &symptomData)
     cout << "2. A Few Days - Lasted 1-3 days.\n";
     cout << "3. One Week or Longer - Lasted at least 7 days.\n";
     cout << "4. Not Sure\n";
+    cout << "5. Back to Main Menu\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice == 1)
     {
         symptomData.duration = "Today";
+        return true;
     }
     else if (choice == 2)
     {
         symptomData.duration = "A Few Days";
+        return true;
     }
     else if (choice == 3)
     {
         symptomData.duration = "One Week or Longer";
+        return true;
+    }
+    else if (choice == 4)
+    {
+        symptomData.duration = "Not Sure";
+        return true;
+    }
+    else if (choice == 5)
+    {
+        cout << "main menu\n";
+        return false;
     }
     else
     {
         symptomData.duration = "Not Sure";
+        return true;
     }
 }
 
-void genquesnum2(SymptomData &symptomData)
+bool genquesnum2(SymptomData &symptomData)
 {
     int choice;
 
@@ -43,18 +59,44 @@ void genquesnum2(SymptomData &symptomData)
     cout << "1. Mild - Does not greatly affect daily activities.\n";
     cout << "2. Moderate - Makes some daily activities difficult.\n";
     cout << "3. Severe - Makes normal daily activities very difficult.\n";
+    cout << "4. Back to Previous Question\n";
+    cout << "5. Back to Main Menu\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if (choice == 1) { symptomData.severity = "Mild";
-     } else if (choice == 2) {
-        symptomData.severity = "Moderate";
-    } else {
-        symptomData.severity = "Severe";
+    if (choice == 1)
+    {
+        symptomData.severity = "Mild";
+        return true;
     }
+    else if (choice == 2)
+    {
+        symptomData.severity = "Moderate";
+        return true;
+    }
+    else if (choice == 3)
+    {
+        symptomData.severity = "Severe";
+        return true;
+    }
+    else if (choice == 4)
+    {
+        if (!genquesnum1(symptomData))
+        {
+            return false;
+        }
+        return genquesnum2(symptomData);
+    }
+    else if (choice == 5)
+    {
+        cout << "main menu\n";
+        return false;
+    }
+
+    return true;
 }
 
-void genquesnum3(SymptomData &symptomData)
+bool genquesnum3(SymptomData &symptomData)
 {
     int choice;
 
@@ -63,20 +105,49 @@ void genquesnum3(SymptomData &symptomData)
     cout << "2. Slightly - Some activities are affected.\n";
     cout << "3. Moderately - Several activities are difficult.\n";
     cout << "4. Not Sure\n";
+    cout << "5. Back to Previous Question\n";
+    cout << "6. Back to Main Menu\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if (choice == 1) { symptomData.impact = "Not at All";
-    } else if (choice == 2) {
-        symptomData.impact = "Slightly";
-    } else if (choice == 3) {
-        symptomData.impact = "Moderately";
-    } else {
-        symptomData.impact = "Not Sure";
+    if (choice == 1)
+    {
+        symptomData.impact = "Not at All";
+        return true;
     }
+    else if (choice == 2)
+    {
+        symptomData.impact = "Slightly";
+        return true;
+    }
+    else if (choice == 3)
+    {
+        symptomData.impact = "Moderately";
+        return true;
+    }
+    else if (choice == 4)
+    {
+        symptomData.impact = "Not Sure";
+        return true;
+    }
+    else if (choice == 5)
+    {
+        if (!genquesnum2(symptomData))
+        {
+            return false;
+        }
+        return genquesnum3(symptomData);
+    }
+    else if (choice == 6)
+    {
+        cout << "main menu\n";
+        return false;
+    }
+
+    return true;
 }
 
-void genquesnum4(SymptomData &symptomData)
+bool genquesnum4(SymptomData &symptomData)
 {
     int choice;
 
@@ -85,19 +156,46 @@ void genquesnum4(SymptomData &symptomData)
     cout << "2. No - Staying the same.\n";
     cout << "3. Improving - Getting better.\n";
     cout << "4. Not Sure\n";
+    cout << "5. Back to Previous Question\n";
+    cout << "6. Back to Main Menu\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice == 1)
-     {
-     symptomData.progression = "Yes - Becoming more severe";
-    } else if (choice == 2) {
-        symptomData.progression = "No - Staying the same";
-    } else if (choice == 3) {
-        symptomData.progression = "Improving - Getting better";
-    } else {
-        symptomData.progression = "Not Sure";
+    {
+        symptomData.progression = "Yes - Becoming more severe";
+        return true;
     }
+    else if (choice == 2)
+    {
+        symptomData.progression = "No - Staying the same";
+        return true;
+    }
+    else if (choice == 3)
+    {
+        symptomData.progression = "Improving - Getting better";
+        return true;
+    }
+    else if (choice == 4)
+    {
+        symptomData.progression = "Not Sure";
+        return true;
+    }
+    else if (choice == 5)
+    {
+        if (!genquesnum3(symptomData))
+        {
+            return false;
+        }
+        return genquesnum4(symptomData);
+    }
+    else if (choice == 6)
+    {
+        cout << "main menu\n";
+        return false;
+    }
+
+    return true;
 }
 
 bool genquesnum5(SymptomData &symptomData)
@@ -105,7 +203,7 @@ bool genquesnum5(SymptomData &symptomData)
     int choice;
 
     cout << "\nDo you have other symptoms or concerns?\n";
-    cout << "1. Yes\n";
+    cout << "1. Yes (describe in a sentence)\n";
     cout << "2. No\n";
     cout << "3. Back to Previous Question\n";
     cout << "4. Back to Main Menu\n";
@@ -114,17 +212,22 @@ bool genquesnum5(SymptomData &symptomData)
 
     if (choice == 1)
     {
-        symptomData.symptoms = "Yes";
+        cout << "Please describe your other symptoms in a sentence: ";
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        getline(cin, symptomData.symptoms);
         return true;
     }
     else if (choice == 2)
     {
-        symptomData.symptoms = "No";
+        symptomData.symptoms = "The user reported no other symptoms or concerns.";
         return true;
     }
     else if (choice == 3)
     {
-        genquesnum4(symptomData);
+        if (!genquesnum4(symptomData))
+        {
+            return false;
+        }
         return genquesnum5(symptomData);
     }
     else if (choice == 4)
@@ -148,6 +251,7 @@ bool genquesnum6(SymptomData &symptomData)
     cout << "5. Feeling unsafe or needing immediate mental health support\n";
     cout << "6. None of These\n";
     cout << "7. Back to Previous Question\n";
+    cout << "8. Back to Main Menu\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
@@ -188,6 +292,11 @@ bool genquesnum6(SymptomData &symptomData)
             return false;
         }
         return genquesnum6(symptomData);
+    }
+    else if (choice == 8)
+    {
+        cout << "main menu\n";
+        return false;
     }
 
     return true;
@@ -262,11 +371,22 @@ void displaySymptomSummary(const SymptomData &symptomData)
 
 bool generalquestions(SymptomData &symptomData)
 {
-    genquesnum1(symptomData);
-    genquesnum2(symptomData);
-    genquesnum3(symptomData);
-    genquesnum4(symptomData);
-
+    if (!genquesnum1(symptomData))
+    {
+        return false;
+    }
+    if (!genquesnum2(symptomData))
+    {
+        return false;
+    }
+    if (!genquesnum3(symptomData))
+    {
+        return false;
+    }
+    if (!genquesnum4(symptomData))
+    {
+        return false;
+    }
     if (!genquesnum5(symptomData))
     {
         return false;
